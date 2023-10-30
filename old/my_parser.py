@@ -13,7 +13,7 @@ path = "devas/"
 
 dates = []
 start_date = date(2022,1,1)
-end_date = date(2023,10,21)
+end_date = date(2023,10,20)
 
 def daterange(start_date, end_date):
     for n in range(int((end_date - start_date).days)):
@@ -26,9 +26,9 @@ for single_date in daterange(start_date, end_date):
 for date_value in dates:
     data=date_value.split("/")
     directory = path
-    for file in os.listdir('C:/Users/Shubhangi/CPA Project/CPA 2023/devas/'):
+    for file in os.listdir('C:/Users/Shubhangi/CPA Project/CPA 2023/devas'):
         f = open(directory+file,"r",encoding="UTF-8")
-        outfile = codecs.open('C:/Users/Shubhangi/CPA Project/CPA 2021/d.csv','a','utf-8')
+        outfile = codecs.open('C:/Users/Shubhangi/CPA Project/CPA 2023/d.csv','a','utf-8')
         soup = BeautifulSoup(f.read(),"lxml")
         table = soup.find("table", { "id" : "ContentPlaceHolder1_GrdFoundPS" })
         try:
